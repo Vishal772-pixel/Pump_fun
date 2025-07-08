@@ -28,7 +28,7 @@ constructor( string memory name_, string memory symbol_)ERC20(name_,symbol_){
 
 }//  Returns current price per token based on bonding curves
   function getCurrentPrice() public view returns(uint256){
-    return baseprice +(priceIncrement*totalSupply());
+    return basePrice +(priceIncrement*totalSupply());
 //    return basePrice+(slope*totalSupply());
 
   }
@@ -60,12 +60,12 @@ function sell(uint256 amount) external {
 
   require(address(this).balance >= ethToReturn, "Contract does not have enough");
   // Transfer tokens back to creator (like a buyback)
-  _transfer(msg.sender, creator, amount);
+_transfer(msg.sender, creator, amount);
 
 totalSold -= amount;
 
-  // send Eth back to seller 
-  payable(msg.sender).transfer(ethToReturn);
+// send Eth back to seller 
+payable(msg.sender).transfer(ethToReturn);
 
   emit TokenSold(msg.sender, amount, price);
 }
@@ -86,24 +86,3 @@ payable(creator).transfer(address(this).balance);
 
   }
    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}

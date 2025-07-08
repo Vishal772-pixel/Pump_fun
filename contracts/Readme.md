@@ -1,6 +1,32 @@
 Contracts will be in Foundry ...a popular framework to write contract logics , deployment and tests..
 
 Here we would be having a setup  instructions,guide for foundry .....less go
+forge install OpenZeppelin/openzeppelin-contracts
+
+
+
+
+
+
+
+tO DEPLOY THE CONTRACT USE BELOW COMMAND 
+forge script script/DeployFactory.s.sol \
+  --rpc-url https://sepolia.infura.io/v3/10ca957697ae4abe89854ebfa0e14ea5 \
+  --private-key 4b172bc6457c5241c87103402812893b58cf160ef261cc544d8dbc47472db158 \
+  --broadcast
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## Foundry
@@ -70,5 +96,6 @@ $ anvil --help
 $ cast --help
 ```
 
+forge install OpenZeppelin/openzeppelin-contracts
 
 
