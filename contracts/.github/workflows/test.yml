@@ -1,4 +1,4 @@
-name: test
+name: CI
 
 on:
   push:
@@ -10,27 +10,27 @@ env:
 
 jobs:
   check:
-    strategy:
-      fail-fast: true
-
     name: Foundry project
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
 
       - name: Install Foundry
         uses: foundry-rs/foundry-toolchain@v1
-        with:
-          version: nightly
 
-      - name: Install dependencies
+      - name: Show Forge version
         run: |
-          forge soldeer install
+          forge --version
+
+      - name: Run Forge fmt
+        run: |
+          forge fmt --check
+        id: fmt
 
       - name: Run Forge build
         run: |
-          forge --version
           forge build --sizes
         id: build
 
