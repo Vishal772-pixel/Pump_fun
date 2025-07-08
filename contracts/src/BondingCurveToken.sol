@@ -46,7 +46,7 @@ constructor( string memory name_, string memory symbol_)ERC20(name_,symbol_){
    require(balanceOf(creator)>=amountToBuy, "Not enough tokns available");
 
   _transfer(creator,msg.sender,amountToBuy);
-  totalSold+=amountToBuy;
+totalSold+=amountToBuy;
  emit TokenBought(msg.sender,amountToBuy,price);
 
 }
@@ -62,15 +62,13 @@ function sell(uint256 amount) external {
   // Transfer tokens back to creator (like a buyback)
   _transfer(msg.sender, creator, amount);
 
-  totalSold -= amount;
+totalSold -= amount;
 
   // send Eth back to seller 
   payable(msg.sender).transfer(ethToReturn);
 
   emit TokenSold(msg.sender, amount, price);
 }
-
-
 
 
   // Creator can withdraw accumulated ETH from buys
