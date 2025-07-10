@@ -27,7 +27,7 @@ The backend will run on `http://localhost:5000` by default.
 2. Add the following line to the `.env` file:
 
 ```
-MONGO_URI="mongodb+srv://memecoin:tiwariom@cluster0.tlubk6w.mongodb.net/"
+
 ```
 
 This will allow the backend to connect to your MongoDB database.
