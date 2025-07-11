@@ -22,6 +22,7 @@ function Home() {
             placeholder="search for token"
             className="flex-1 rounded-lg px-4 py-3 bg-[#000000] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-400"
           />
+          
           <button className="px-6 py-3 rounded-lg bg-[#86Efac] text-white font-bold shadow hover:bg-green-600 transition">search</button>
         </div>
       </div>
@@ -39,6 +40,7 @@ function Home() {
               className="snap-center flex min-w-[350px] max-w-[350px] bg-[#111927] text-white p-4 rounded-xl shadow-md flex-shrink-0 hover:shadow-lg transition"
               style={{ width: 350 }}
             >
+
               <img src={token.image} alt="token" className="rounded-full w-20 h-20 object-cover mr-4 self-center" />
               <div className="flex flex-col justify-center flex-1">
                 <div className="font-bold">
