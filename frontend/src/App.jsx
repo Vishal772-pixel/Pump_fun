@@ -1,19 +1,19 @@
-import React from 'react';
-import Sidebar from './components/Sidebar';
-import { SidebarProvider, useSidebar } from './context/SidebarContext';
-import TopNavbar from './components/TopNavbar';
+import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import AppRoutes from './routes';
 
-import {useState} from "react";
-import LoginPopup from './components/LoginPopup';
+import Sidebar from './components/Sidebar';
+import TopNavbar from './components/TopNavbar';
+import {LoginPopup} from './components/LoginPopup';
+import AppRoutes from './routes';
+import { SidebarProvider, useSidebar } from './context/SidebarContext';
 
 function MainContent({ children }) {
-  const [showLogin,setShowLogin]= useState(false);
   const { isOpen } = useSidebar();
   return (
     <main
-      className={`flex-1 p-8 transition-all duration-300 ml-20 ${isOpen ? 'md:ml-64' : 'ml-20'}`}
+      className={`flex-1 p-8 transition-all duration-300 ml-20 ${
+        isOpen ? 'md:ml-64' : 'ml-20'
+      }`}
     >
       {children}
     </main>
@@ -21,16 +21,30 @@ function MainContent({ children }) {
 }
 
 function App() {
-    const [showLogin,setShowLogin]= useState(true);
+  const [showLogin, setShowLogin] = useState(false); // For modal
+  const [walletAddress, setWalletAddress] = useState(null); // Wallet state
+
   return (
     <SidebarProvider>
       <BrowserRouter>
         <div>
           <Sidebar />
-          {/* <TopNavbar/> */}
-          <TopNavbar onLoginClick={()=> setShowLogin(true)} />
-            {showLogin && <LoginPopup onClose={()=> setShowLogin(false)}/>}
-            {}
+          <TopNavbar
+            onLoginClick={() => setShowLogin(true)}
+            walletAddress={walletAddress}
+          />
+          
+          {/* Login Popup Modal */}
+          {showLogin && (
+            <LoginPopup
+              onClose={() => setShowLogin(false)}
+              onWalletConnected={(address) => {
+                setWalletAddress(address);
+                setShowLogin(false); // Close modal
+              }}
+            />
+          )}
+
           <MainContent>
             <AppRoutes />
           </MainContent>
@@ -40,4 +54,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

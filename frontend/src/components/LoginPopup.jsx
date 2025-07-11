@@ -60,7 +60,7 @@ import React from 'react';
 import { connectWallet } from './ConnectWallet'; 
 import { getProvider,getFactoryContract,checkChain} from "../utils/contract";
 
-export default function LoginPopup({ onClose }) {
+export function LoginPopup({ onClose }) {
   const handleMetaMaskLogin = async () => {
     const address = await connectWallet();
     if (address) {
@@ -69,11 +69,28 @@ export default function LoginPopup({ onClose }) {
     }
   };
 
-  return (
-    <div className="popup">
-      <button onClick={handleMetaMaskLogin}>Connect with MetaMask</button>
+ return (
+  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-60 z-50">
+    <div className="bg-white p-6 rounded shadow-md w-80 text-center">
+      <h2 className="text-xl font-semibold mb-4">Login</h2>
+
+      <button
+        onClick={handleMetaMaskLogin}
+        className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-800 w-full mb-4"
+      >
+        Connect with MetaMask
+      </button>
+
+      <button
+        onClick={onClose}
+        className="text-gray-500 text-sm mt-3 hover:underline"
+      >
+        Cancel
+      </button>
     </div>
-  );
+  </div>
+);
+
 }
 
 
