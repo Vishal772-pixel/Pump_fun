@@ -1,7 +1,3 @@
-# Frontend
-
-This is the frontend for the pump.fun UI, built with React, Vite, and Tailwind CSS.
-
-## Setup
-
-See root README for instructions. 
+Login -> components -> 1. Loginpopup.jsx
+                    -> 2.ConnectWallet.js
+                    -> 3. GoogleLoginButton.js

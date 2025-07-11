@@ -11,7 +11,7 @@ const trendingTokens = Array.from({ length: 10 }).map((_, i) => ({
 
 function Home() {
   return (
-    <div className="min-h-screen bg-[#0d1117] pb-16">
+    <div className="min-h-screen bg-[rgb(26,32,28)] pb-16">
       {/* Heading */}
       <div className="flex flex-col items-center pt-24 pb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center tracking-tight">start a new coin</h1>
@@ -20,9 +20,9 @@ function Home() {
           <input
             type="text"
             placeholder="search for token"
-            className="flex-1 rounded-lg px-4 py-3 bg-[#111927] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-pink-500 placeholder-gray-400"
+            className="flex-1 rounded-lg px-4 py-3 bg-[#000000] text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500 placeholder-gray-400"
           />
-          <button className="px-6 py-3 rounded-lg bg-pink-500 text-white font-bold shadow hover:bg-pink-600 transition">search</button>
+          <button className="px-6 py-3 rounded-lg bg-[#86Efac] text-white font-bold shadow hover:bg-green-600 transition">search</button>
         </div>
       </div>
 

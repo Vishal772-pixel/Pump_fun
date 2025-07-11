@@ -36,7 +36,7 @@ function Profile() {
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center px-4 pt-24 pb-12 overflow-y-auto">
         {/* Profile Header */}
-        <div className="w-full max-w-2xl mx-auto bg-[#111927] rounded-2xl shadow-lg p-6 flex flex-col items-center mb-8 border-b border-gray-800">
+        <div className="w-full max-w-2xl mx-auto bg-[#000000] rounded-2xl shadow-lg p-6 flex flex-col items-center mb-8 border-b border-gray-800">
           <div className="w-28 h-28 rounded-full bg-gray-700 flex items-center justify-center mb-4 overflow-hidden">
             {/* TODO: Replace with user avatar */}
             <FaUserCircle className="text-gray-400" size={90} />
@@ -77,7 +77,7 @@ function Profile() {
 
         {/* Tabs Section */}
         <div className="w-full max-w-2xl mx-auto mb-6">
-          <div className="flex border-b border-gray-700">
+          <div className="flex border-b bg-[#000000]">
             <button
               className={`flex-1 py-3 text-white font-bold text-center transition border-b-2 ${activeTab === 'balances' ? 'border-green-400' : 'border-transparent'} focus:outline-none`}
               onClick={() => setActiveTab('balances')}

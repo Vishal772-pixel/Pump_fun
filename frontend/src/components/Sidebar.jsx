@@ -70,7 +70,7 @@ function Sidebar() {
                     {item.label}
                   </span>
                   {item.badge && isOpen && (
-                    <span className="ml-2 bg-pink-500 text-xs px-2 py-0.5 rounded-full font-semibold">{item.badge}</span>
+                    <span className="ml-2 bg-[#86Efac] text-xs px-2 py-0.5 rounded-full font-semibold">{item.badge}</span>
                   )}
                 </NavLink>
               ) : (
@@ -89,7 +89,7 @@ function Sidebar() {
                     {item.label}
                   </span>
                   {item.badge && isOpen && (
-                    <span className="ml-2 bg-pink-500 text-xs px-2 py-0.5 rounded-full font-semibold">{item.badge}</span>
+                    <span className="ml-2 bg-[#86Efac] text-xs px-2 py-0.5 rounded-full font-semibold">{item.badge}</span>
                   )}
                 </button>
               )}
@@ -101,7 +101,7 @@ function Sidebar() {
       {/* Bottom buttons */}
       <div className="p-4 mt-auto flex flex-col gap-2">
         <button
-          className="w-full py-2 px-4 rounded-lg bg-pink-500 text-white font-bold shadow hover:bg-pink-600 transition flex items-center"
+          className="w-full py-2 px-4 rounded-lg bg-[#86Efac] text-white font-bold shadow hover:bg-green-600 transition flex items-center"
           // TODO: Link to create coin route
         >
           {/* TODO: Replace with plus icon */}
@@ -109,7 +109,7 @@ function Sidebar() {
           <span className={`${isOpen ? 'inline' : 'hidden'}`}>Create Coin</span>
         </button>
         <button
-          className="w-full py-2 px-4 rounded-lg border-2 border-pink-500 text-pink-500 font-bold hover:bg-pink-600 hover:text-white shadow transition flex items-center"
+          className="w-full py-2 px-4 rounded-lg border-2 bg-[#86Efac]0 text-[#000000] font-bold hover:bg-green-600 hover:text-white shadow transition flex items-center"
           // TODO: Link to pump app
         >
           {/* TODO: Replace with app icon */}

@@ -5,7 +5,11 @@ import TopNavbar from './components/TopNavbar';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './routes';
 
+import {useState} from "react";
+import LoginPopup from './components/LoginPopup';
+
 function MainContent({ children }) {
+  const [showLogin,setShowLogin]= useState(false);
   const { isOpen } = useSidebar();
   return (
     <main
@@ -17,12 +21,16 @@ function MainContent({ children }) {
 }
 
 function App() {
+    const [showLogin,setShowLogin]= useState(true);
   return (
     <SidebarProvider>
       <BrowserRouter>
         <div>
           <Sidebar />
-          <TopNavbar />
+          {/* <TopNavbar/> */}
+          <TopNavbar onLoginClick={()=> setShowLogin(true)} />
+            {showLogin && <LoginPopup onClose={()=> setShowLogin(false)}/>}
+            {}
           <MainContent>
             <AppRoutes />
           </MainContent>
