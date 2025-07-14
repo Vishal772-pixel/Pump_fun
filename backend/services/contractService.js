@@ -1,7 +1,8 @@
-const { ethers } = require('ethers');
-const fs = require('fs');
-const path = require('path');
-require('dotenv').config();
+import { ethers } from 'ethers';
+import fs from 'fs';
+import path from 'path';
+import dotenv from 'dotenv';
+dotenv.config();
 
 // Example: BondingCurveToken contract
 // const CONTRACT_ABI = JSON.parse(fs.readFileSync(path.join(__dirname, '../../contracts/src/BondingCurveToken.sol'), 'utf8'));
@@ -45,11 +46,4 @@ async function sell(amount) {
   return null;
 }
 
-module.exports = {
-  mint,
-  getPrice,
-  listTokens,
-  buy,
-  sell,
-  // contract,
-}; 
+export { mint, getPrice, listTokens, buy, sell };

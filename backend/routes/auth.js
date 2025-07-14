@@ -1,8 +1,14 @@
-const express = require('express');
+import express from 'express';
+import { register, login, googleLogin, completeProfile } from '../controllers/authController.js';
 const router = express.Router();
-const { register, login } = require('../controllers/authController');
 
 router.post('/register', register);
 router.post('/login', login);
 
-module.exports = router; 
+// Google OAuth login route
+router.post('/google-login', googleLogin);
+
+// Profile completion route
+router.post('/completeprofile', completeProfile);
+
+export default router;

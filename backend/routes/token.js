@@ -1,8 +1,8 @@
-const express = require('express');
+import express from 'express';
+import auth from '../middleware/auth.js';
+import { mint } from '../controllers/tokenController.js';
 const router = express.Router();
-const auth = require('../middleware/auth');
-const { mint } = require('../controllers/tokenController');
 
 router.post('/mint', auth, mint);
 
-module.exports = router; 
+export default router;

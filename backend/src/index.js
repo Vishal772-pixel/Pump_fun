@@ -1,7 +1,8 @@
-require('dotenv').config();
-const express = require('express');
-const mongoose = require('mongoose');
-const cors = require('cors');
+import dotenv from 'dotenv';
+dotenv.config();
+import express from 'express';
+import mongoose from 'mongoose';
+import cors from 'cors';
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -18,10 +19,10 @@ mongoose.connect(process.env.MONGO_URI, {
   .then(() => console.log('MongoDB connected'))
   .catch((err) => console.error('MongoDB connection error:', err));
 
-const authRoutes = require('../routes/auth');
+import authRoutes from '../routes/auth.js';
 app.use('/api/auth', authRoutes);
 
-const tokenRoutes = require('../routes/token');
+import tokenRoutes from '../routes/token.js';
 app.use('/api/tokens', tokenRoutes);
 
 // Health check endpoint
@@ -45,4 +46,4 @@ app.get('/', (req, res) => {
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
-}); 
+});
